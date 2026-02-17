@@ -1,3 +1,5 @@
+🚀 Live App: https://customer-churn-prediction-fdnkcchznkhj9tt8skdner.streamlit.app
+
 📊 Customer Churn Prediction
 📌 Problem Statement
 

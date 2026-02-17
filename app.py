@@ -44,11 +44,12 @@ if st.button("Predict"):
     input_data['TotalCharges'] = total_charges
 
     input_scaled = scaler.transform(input_data)
-    prediction = model.predict(input_scaled)
+    probability = model.predict_proba(input_scaled)[0][1]
 
-    if prediction[0] == 1:
-        st.error("⚠ Customer is likely to churn!")
+    st.write(f"Churn Probability: {probability:.2f}")
+
+    if probability > 0.35:
+       st.error("⚠ Customer is likely to churn!")
     else:
-        st.success("✅ Customer is likely to stay.")
-
+       st.success("✅ Customer is likely to stay.")
 
